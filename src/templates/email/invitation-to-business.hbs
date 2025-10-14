@@ -1,0 +1,42 @@
+<html lang='es'>
+  <head>
+    <meta charset='UTF-8' />
+    <meta name='viewport' content='width=device-width, initial-scale=1.0' />
+    <title>Cambio de contraseña exitoso</title>
+    <style>
+      body { font-family: Arial, sans-serif; background-color: #f4f4f4; margin:
+      0; padding: 0; color: #333333; } .container { max-width: 600px; margin: 0
+      auto; background-color: #ffffff; padding: 20px; border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); } .header { text-align: center;
+      padding-bottom: 20px; border-bottom: 1px solid #dddddd; } .header img {
+      max-width: 100px; } .content { padding: 20px 0; } .footer { text-align:
+      center; padding-top: 20px; border-top: 1px solid #dddddd; font-size: 12px;
+      color: #aaaaaa; }
+    </style>
+  </head>
+  <body>
+    <div class='container'>
+      <div class='header'>
+        <h1>Fuiste invitado a: {{businessName}}</h1>
+      </div>
+      <div class='content'>
+        <p>Hola, {{username}}</p>
+        <p>Fuiste invitado para ser parte de {{businessName}}
+            Haz click en el siguiente link para continuar con tu registro</p>
+        <p><a href='{{link}}'>Continuar con el registro</a></p>
+        <p>Si no puedes hacer click en el link, copia y pega la siguiente URL
+            en tu navegador:</p>
+        <p>{{invitationToken}}</p>
+        <p>Recuerda que esta invitación es válida por {{invitationExpiration}}.</p>
+        <p>Si ya tienes una cuenta, puedes ignorar este mensaje.</p>
+        <p>Si no esperabas esta invitación, por favor ignora este mensaje.</p>
+        <p>Si tienes alguna pregunta, no dudes en contactarnos.</p>
+        <p>¡Esperamos verte pronto!</p>
+      </div>
+      <div class='footer'>
+        <p>Gracias,</p>
+        <p>El equipo de {{businessName}}</p>
+      </div>
+    </div>
+  </body>
+</html>

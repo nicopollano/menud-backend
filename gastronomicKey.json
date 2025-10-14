@@ -1,0 +1,14 @@
+{
+    "type": "service_account",
+    "project_id": "modified-return-447804-u1",
+    "private_key_id": "f76f233969790dae15bc9b29b4e04651afb4a092",
+    "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQC4ZwyzgVBKvk3q\nixFYDecKZK26Zpl6Ac55/LNSMUfuxKoeew5enLeMlJDSIKnIuIBYQTIwxhF1dcKB\n73RG0R98DbIyyHu4P3+cbTFmPJw5x42jryKdniRRpo4GTqw9iff/PIy6XJDGMQFL\nBzdq2fXq/OkOr71+TjnyJ95ytNyzNxSN0RCZv9gDsXBXfIKVcwmevKPmV1ZBzhJw\nonIdq+KRoZFTklMGywvvDznxqBP6DfnhaCORgZBUNDzO/PCOF1YFCtN/nUua+ENm\nB3ccj9ykETw5cqT5T7EDP9antDvCfeciISqLDs0ev/jSUdYyvfOu2B72wQO12jIt\nBnOiVgn/AgMBAAECggEAFQ34ZnMrMpWJpPAtp0hTFciKs3/tIdVHTiiwZX/opCut\nTDSls99176WzkWJsWwAsm1G6WX+hVQWAk2sT84ADdcZvOcV9UXtikSmV3IQAHHLF\n9SdVLvpJpaRRjrPN48A3N4Z3f6cmWpK+1eJkN/LcqsYnaryzHf2a4nod4n/3EQ5/\nh7e0fPY7US5fYOCdFowGBQOg/tEm4Hc2HgbMcbX4t9hT8/UnBiY6opgWPfs7cWGn\n/IrlZvpNDhmZnoa5Fsrnyni8fanN5C5eUbRfSxApS9G32oz3sux5iiScMqlsghU+\nlZ+6pstlQu18vCMgRPPMILDypCL9SkfkcfOBos+EaQKBgQDxzuo63QyvJJ7uZ2Uv\niVRw2lV8Nad8+Nb7n2zDzYVEogRJhqLStR02Bi8itEyDCbHN/D8g0uBhZSU/O0fk\nDW/d54nip8J3UXLVy8KuMQdU/FspLearIfM2LHQizZ/3NwcpmNbFmdxDRohUJX1V\nS9VRkMvKJHyZp3/uCfdkcmtb6QKBgQDDOaI0fHohdjrdJiDwZfYPM26G/ofMI1XH\nRdE2tu5jB6KUKxIrb3OdYBKQcv2yncrlcN4Q+a17NkmfLVKobWG+NqGV71S8H3Ru\nPpMvxKXMDPFnIkINm58tO0sA+QOD7WRHCBuuJ37RLRxZJJkwfwo3B5XsxPujIQJB\nMzm5VWhNpwKBgBCj6p6OY7cR0BYb62ywCK2TeNqJXrNM9I5wVC3NUOR+OclNiJrz\nd8Ul+8xpl/JUknXYbAe4O1S4fy2wyKu6+P3OV0DPxqQraLmpwgX2vchtbWCSFhOk\nzHXn7T4P5HhAwy9roywKAIxoqC0SP2PFSjLIwh1xEVoJmtYovWueLCExAoGBAJ5u\n7WZvBqaVTpwez2iJNrGLac2ATzCqFHkN/gXLW5deoOBiO/KoFknHqAk2aRFF4V1m\nxbE9Dz8JBaJ6o7QwYLx/lY8alce+Nz0o50ZC7tK0Rk0OjlCA1SNeFTaK4AF27ISA\n3gXt44tacsEdZHzo/J9ANrnZ+uWeajgDnHr+BxHNAoGBAN7mtrd248qIQ1GHbFus\nM01bceiuEuJNutPlhIRwJV20qgCwrMq9VUcYppgagCTl48FrLzREdfG89xzKe/th\nu3kdquH9vbUYAsFZDv/h29lWrIzRSTWf4isMdaXAwXc2zf5o66v3YUOFh6/t6Xgv\nky4Et0NOOvsEXpuUY/Xxiq6f\n-----END PRIVATE KEY-----\n",
+    "client_email": "gastronomicadmin@modified-return-447804-u1.iam.gserviceaccount.com",
+    "client_id": "115138515096147995986",
+    "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+    "token_uri": "https://oauth2.googleapis.com/token",
+    "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+    "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/gastronomicadmin%40modified-return-447804-u1.iam.gserviceaccount.com",
+    "universe_domain": "googleapis.com"
+  }
+  

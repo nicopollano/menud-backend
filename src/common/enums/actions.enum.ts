@@ -1,0 +1,27 @@
+export enum Actions {
+	CREATE = "create",
+	UPDATE = "update",
+	DELETE = "delete",
+	VIEW = "view",
+	LIST = "list",
+	SUMMARY = "summary",
+	COPY = "copy",
+	MOVE = "move",
+	AVAILABLE_DAYS = "availableDays",
+	MANAGE_PERMISSION = "manage_permission",
+	MANAGE_USERS = "manage_users",
+	MANAGE_BUSINESS = "manage_business",
+	MANAGE_PRODUCTS = "manage_products",
+	MANAGE_CATEGORIES = "manage_categories",
+	MANAGE_SUBCATEGORIES = "manage_subcategories",
+	MANAGE_DISCOUNTS = "manage_discounts",
+	MANAGE_SETTINGS = "manage_settings",
+	MANAGE_PROMOTIONS = "manage_promotions",
+	MANAGE_BRANCHES = "manage_branches",
+	MANAGE_MENUS = "manage_menus",
+	MANAGE_PRICING = "manage_pricing",
+	MANAGE_ANALYTICS = "manage_analytics",
+	MANAGE_SYSTEM_SETTINGS = "manage_system_settings",
+}
+
+export type ActionTypes = `${Actions}`;

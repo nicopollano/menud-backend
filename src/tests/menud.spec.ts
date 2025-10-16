@@ -39,7 +39,7 @@ import runDeleteTests from "./delete.spec-module";
 import runProductTests from "src/product/tests/product.spec-module";
 import runCleanupTests from "./cleanup.spec-module";
 
-describe("RISTOKIT TESTS", () => {
+describe("MENUD TESTS", () => {
 	let app: INestApplication;
 	let tokenOwner: string;
 	let tokenManager: string;

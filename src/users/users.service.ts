@@ -3,7 +3,7 @@ import { CreateUserDto } from "./dto/create-user.dto";
 import { User } from "./entities/user.entity";
 import { InjectRepository } from "@nestjs/typeorm";
 import { IsNull, Not, Repository } from "typeorm";
-import * as bcrypt from "bcrypt";
+import * as bcrypt from 'bcryptjs';
 import { ErrorList } from "src/common/enums/error.enum";
 import { BadRequestException_C, NotFoundException_C } from "src/common/Custom/http-response";
 import { BranchService } from "src/branch/branch.service";

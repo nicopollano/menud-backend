@@ -3,7 +3,7 @@
 **Develop**:
 
 ```
-    https://api.ristokit.com
+    https://api.menud.pidrive.com.ar
 ```
 
 
@@ -80,12 +80,12 @@
 
 Descargar repositorio
 ```bash
-git clone https://github.com/ristokit/backend.git ristokit-backend
+git clone https://github.com/nicopollano/backend.git menud-backend
 ```
 
 Entrar a la carpeta del repositorio
 ```bash
-cd ristokit-backend
+cd menud-backend
 ```
 
 Instalar dependencias

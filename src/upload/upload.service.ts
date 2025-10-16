@@ -12,7 +12,7 @@ import { url } from "inspector";
 import { PessimisticLockTransactionRequiredError } from "typeorm";
 import axios from "axios";
 import { Product } from "src/product/entities/product.entity";
-const sharp = require("sharp");
+//const sharp = require("sharp");
 const ImageKit = require("imagekit");
 
 @Injectable()
@@ -30,7 +30,7 @@ export class UploadService {
 	async uploadImage(file: Express.Multer.File, subfolder: string, logo = false, businessParam: Business = null, branchParam: Branch = null): Promise<string> {
 		if (!file) throw new BadRequestException_C(ErrorList.UploadImageNotSpecified);
 
-		const fileOptimized = await sharp(file.buffer).resize(550).jpeg({ quality: 70 }).toBuffer();
+		//const fileOptimized = await sharp(file.buffer).resize(550).jpeg({ quality: 70 }).toBuffer();
 
 		const filename = file.originalname;
 		const branch: Branch = branchParam ?? this.clsService.get("branch");
@@ -40,7 +40,7 @@ export class UploadService {
 			? `${config.stage}/buk${business.id}/logo/${filename}`
 			: `${config.stage}/buk${business.id}/branches/${branch.id}/${subfolder}/${filename}`;
 
-		const result = await this.uploadToImageKit(fileOptimized, filename, path);
+		const result = await this.uploadToImageKit(/*fileOptimized*/ file.buffer, filename, path);
 		if (!result || !result.url) {
 			throw new InternalServerErrorException_C(ErrorList.UploadError);
 		}

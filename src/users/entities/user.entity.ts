@@ -11,7 +11,7 @@ import {
 	CreateDateColumn,
 	UpdateDateColumn,
 } from "typeorm";
-import * as bcrypt from "bcrypt";
+import * as bcrypt from 'bcryptjs';
 import { Subscription } from "src/subscription/entities/subscription.entity";
 import { Branch } from "src/branch/entities/branch.entity";
 import { Business } from "src/business/entities/business.entity";

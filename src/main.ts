@@ -43,9 +43,9 @@ async function bootstrap() {
 	});
 
 	const config = new DocumentBuilder()
-		.setTitle(`RistoKit API`)
+		.setTitle(`MenuD API`)
 		.setDescription(
-			'The ristokit API description<br><hr></hr><h3>Websocket documentation</h3><br><a href="https://github.com/iterawebprojects/gastronomic-backend/blob/main/documentation/websocket.md"><strong>Documentacion</strong></a><br><a href="https://ristokitdocumentation.postman.co/workspace/RistoKitDocumentation~df154953-cf1f-43f5-8fc9-639daa8e5f6e/overview"><strong>Postman</strong></a>\n\n---\n\n### EXPORT Postman\n```url\nhttps://ristokit-backend-' +
+			'The menud API description<br><hr></hr><h3>Websocket documentation</h3><br><a href="https://github.com/iterawebprojects/gastronomic-backend/blob/main/documentation/websocket.md"><strong>Documentacion</strong></a><br><a href="https://menuddocumentation.postman.co/workspace/MenuDDocumentation~df154953-cf1f-43f5-8fc9-639daa8e5f6e/overview"><strong>Postman</strong></a>\n\n---\n\n### EXPORT Postman\n```url\nhttps://menud-backend-' +
 				process.env.STAGE.toLowerCase() +
 				".pidrive.com.ar/swagger-json\n```\n\n\n\n---\n\n## Index\n\n- [Authentications](#/Authentications)\n- [Users](#/Users)\n- [Subscriptions](#/Subscriptions)\n- [Branches](#/Branches)\n- [Businesses](#/Businesses)\n- [Uploads](#/Uploads)\n- [Products](#/Products)\n- [Categories](#/Categories)\n- [Subcategories](#/Subcategories)\n- [Menus](#/Menus)\n- [Palettes](#/Palettes)\n- [Members](#/Members)\n- [Schedule](#/Schedule)\n- [Promotions](#/Promotions)",
 		)
@@ -66,7 +66,7 @@ async function bootstrap() {
 	app.getHttpAdapter().get("/swagger-json", (_, res) => {
 		(document as any).servers = [
 			{
-				url: `https://ristokit-backend-develop.pidrive.com.ar`,
+				url: `https://api.menud.pidrive.com.ar`,
 				description: "Default server",
 				variables: {
 					bearerToken: { default: "1" },

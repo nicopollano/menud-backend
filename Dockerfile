@@ -1,28 +1,51 @@
-FROM node:24.4.1-slim
+# -------- Etapa de build --------
+FROM node:20-alpine AS builder
 
-RUN apt-get update -y && apt-get install -y ca-certificates curl gnupg
-RUN echo "deb https://apt.postgresql.org/pub/repos/apt jammy-pgdg main" > /etc/apt/sources.list.d/pgdg.list \
- && curl -fsSL https://www.postgresql.org/media/keys/ACCC4CF8.asc | gpg --dearmor -o /usr/share/keyrings/postgresql.gpg \
- && echo "deb [signed-by=/usr/share/keyrings/postgresql.gpg] https://apt.postgresql.org/pub/repos/apt jammy-pgdg main" > /etc/apt/sources.list.d/pgdg.list \
- && apt-get update \
- && apt-get install -y postgresql-client-17 \
- && rm -rf /var/lib/apt/lists/*
- 
-COPY scripts/init-db.sh /tmp/init-db.sh
-RUN chmod +x /tmp/init-db.sh
-
-COPY scripts/entrypoint.sh /usr/local/bin/entrypoint.sh
-RUN chmod +x /usr/local/bin/entrypoint.sh
-
+# Crear usuario sin privilegios
+RUN adduser -D appuser
 WORKDIR /app
 
+# Instalar dependencias necesarias para construir módulos nativos
+RUN apk add --no-cache python3 make g++ bash
+
+# Instalar dependencias de la app
 COPY package*.json ./
+RUN npm ci --omit=dev=false
+RUN npm rebuild --force
 
-RUN npm install --legacy-peer-deps
-
+# Copiar el código fuente y construir NestJS
 COPY . .
-RUN npm run build
+RUN npx nest build
 
+# -------- Etapa final --------
+FROM node:20-alpine AS runtime
+
+# Instalar solo lo necesario para ejecutar (cliente PostgreSQL, bash)
+RUN apk add --no-cache postgresql-client bash curl
+
+# Crear usuario sin privilegios
+RUN adduser -D appuser
+WORKDIR /app
+
+# Copiar solo artefactos necesarios
+COPY --from=builder /app/dist ./dist
+COPY --from=builder /app/node_modules ./node_modules
+COPY --from=builder /app/package*.json ./
+
+# Copiar scripts y asegurar permisos mínimos
+COPY scripts/init-db.sh /tmp/init-db.sh
+COPY scripts/entrypoint.sh /usr/local/bin/entrypoint.sh
+RUN chown appuser:appuser /usr/local/bin/entrypoint.sh /tmp/init-db.sh \
+ && chmod 700 /usr/local/bin/entrypoint.sh /tmp/init-db.sh \
+ && chown -R appuser:appuser /app \
+ && chmod -R go-rwx /app
+
+# Ejecutar como usuario no root
+USER appuser
+
+# Exponer el puerto de la app
 EXPOSE 3000
 
-CMD ["/usr/local/bin/entrypoint.sh"]
+# Hacer que el sistema de archivos sea de solo lectura
+VOLUME ["/tmp"]
+ENTRYPOINT ["/usr/local/bin/entrypoint.sh"]

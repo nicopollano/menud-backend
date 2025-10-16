@@ -192,12 +192,13 @@ export class AuthService {
 			version: userFind.version,
 		};
 
-		const tokenduration = process.env.TOKENRESETPASSWORDDURATION;
 
+		const tokenduration = process.env.TOKENRESETPASSWORDDURATION;
+		const expiresInMinutes = tokenduration ? parseInt(tokenduration, 10) : 15;
 		const accessToken: string = await this.jwtService.signAsync(
 			{ ...payload, refresh: false },
 			{
-				expiresIn: `${tokenduration}m`,
+				expiresIn: expiresInMinutes * 60, // segundos
 			},
 		);
 
@@ -218,10 +219,13 @@ export class AuthService {
 			version: 0,
 		};
 
+
+		const invitationDuration = process.env.TOKENINVITATIONDURATION;
+		const expiresInDays = invitationDuration ? parseInt(invitationDuration, 10) : 7;
 		const invitationToken = await this.jwtService.signAsync(
 			{ ...payload, refresh: false },
 			{
-				expiresIn: `${process.env.TOKENINVITATIONDURATION}d`,
+				expiresIn: expiresInDays * 24 * 60 * 60, // segundos
 			},
 		);
 

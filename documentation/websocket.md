@@ -1,7 +1,7 @@
 # Websockets (Socket.io)
-En este apartado se detallara por este medio las funciones con las que se administra ristokit.
+En este apartado se detallara por este medio las funciones con las que se administra menud.
 
-[**Ejemplos Postman**](https://ristokitdocumentation.postman.co/workspace/RistoKitDocumentation~df154953-cf1f-43f5-8fc9-639daa8e5f6e/overview)
+[**Ejemplos Postman**](https://menuddocumentation.postman.co/workspace/MenuDDocumentation~df154953-cf1f-43f5-8fc9-639daa8e5f6e/overview)
 
 # Indice
 
@@ -23,7 +23,7 @@ En este apartado se detallara por este medio las funciones con las que se admini
 **Develop**:
 
 ```
-    https://websocket-ristokit-develop.pidrive.com.ar
+    https://websocket-menud-develop.pidrive.com.ar
 ```
 
 **Staging**:

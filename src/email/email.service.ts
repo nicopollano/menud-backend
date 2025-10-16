@@ -106,7 +106,7 @@ export class EmailService {
 
 		return await this.transporter.sendMail({
 			to,
-			subject: `Ristokit: Invitacion a ${branchName ? branchName : businessName}`,
+			subject: `MenuD: Invitacion a ${branchName ? branchName : businessName}`,
 			html,
 		});
 	}

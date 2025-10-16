@@ -1,0 +1,39 @@
+name: Docker Image CI
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v4
+
+    - name: Log in to GitHub Container Registry
+      uses: docker/login-action@v3
+      with:
+        registry: ghcr.io
+        username: ${{ github.actor }}
+        password: ${{ secrets.secretPass }}
+    - name: Setup Node
+      uses: actions/setup-node@v4
+      with:
+        node-version: 20
+        
+    - name: Build and push image
+      uses: docker/build-push-action@v6
+      with:
+        context: .
+        push: true
+        tags: ghcr.io/nicopollano/menud-backend:latest
+
+    - name: Trigger Portainer Webhook
+      if: success()
+      run: |
+        curl -k -X POST https://docker.pidrive.com.ar/api/webhooks/586be751-48d3-448f-9195-82db671e2297

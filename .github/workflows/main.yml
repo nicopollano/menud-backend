@@ -36,4 +36,4 @@ jobs:
     - name: Trigger Portainer Webhook
       if: success()
       run: |
-        curl -k -X POST https://docker.pidrive.com.ar/api/webhooks/586be751-48d3-448f-9195-82db671e2297
+        curl -k -X POST https://docker.pidrive.com.ar/api/webhooks/f3923f2f-96e7-4e84-a070-4d92adf619fa
